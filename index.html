@@ -4,10 +4,8 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Cy Reviews</title>
-<!-- Favicon -->
 <link rel="icon" type="image/png" href="Cylogo_png.png">
 <link rel="apple-touch-icon" href="Cylogo_png.png">
-<!-- Discord / OG embed -->
 <meta property="og:title" content="Cy Reviews">
 <meta property="og:description" content="The community's honest ranking of free Roblox executors. Real UNC scores. Zero paid placements.">
 <meta property="og:image" content="Cylogo_png.png">
@@ -66,7 +64,6 @@ nav{position:fixed;top:0;left:0;right:0;z-index:999;padding:14px 16px}
   display:flex;flex-direction:column;align-items:center;justify-content:center;
   text-align:center;padding:100px 24px 60px;position:relative;overflow:hidden;
 }
-/* rings */
 .rings{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;pointer-events:none}
 .rg{position:absolute;border-radius:50%;border:1px solid rgba(255,255,255,.05)}
 .rg1{width:520px;height:520px}
@@ -115,7 +112,6 @@ nav{position:fixed;top:0;left:0;right:0;z-index:999;padding:14px 16px}
 .h-btns{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;position:relative;z-index:1;animation:fadeUp .9s .3s both}
 @keyframes fadeUp{from{opacity:0;transform:translateY(22px)}to{opacity:1;transform:none}}
 
-/* scroll indicator */
 .scroll-hint{position:absolute;bottom:32px;left:50%;transform:translateX(-50%);opacity:.35;animation:fadeUp 1s .8s both}
 .scroll-track{width:22px;height:36px;border-radius:11px;border:1.5px solid rgba(255,255,255,.35);display:flex;justify-content:center;padding-top:5px}
 .scroll-ball{width:5px;height:7px;border-radius:3px;background:#fff;animation:sb 2s ease-in-out infinite}
@@ -145,7 +141,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:999;padding:14px 16px}
 .sc-n{font-size:34px;font-weight:800;letter-spacing:-.05em;display:block;margin-bottom:6px}
 .sc-l{font-family:'JetBrains Mono',monospace;font-size:9px;font-weight:500;letter-spacing:.18em;text-transform:uppercase;color:rgba(255,255,255,.28);display:block}
 
-/* ── FEATURE STRIP (like StaticX) ── */
+/* ── FEATURE STRIP ── */
 .fstrip{position:relative;z-index:2;display:grid;grid-template-columns:repeat(3,1fr);border-bottom:1px solid rgba(255,255,255,.07)}
 .fs{padding:48px 44px;border-right:1px solid rgba(255,255,255,.07);position:relative;overflow:hidden;transition:background .22s}
 .fs:last-child{border-right:none}
@@ -202,6 +198,30 @@ footer{position:relative;z-index:2;border-top:1px solid rgba(255,255,255,.07);pa
 .tgn{font-family:'JetBrains Mono',monospace;font-size:10px;font-weight:500;letter-spacing:.18em;text-transform:uppercase;color:rgba(255,255,255,.38)}
 .tgc{font-family:'JetBrains Mono',monospace;font-size:9px;color:rgba(255,255,255,.18);background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.07);border-radius:3px;padding:2px 7px}
 
+/* ── PINNED CARD ── */
+.pinned-wrap{margin-bottom:44px}
+.pinned-label{display:flex;align-items:center;gap:10px;padding-bottom:13px;border-bottom:1px solid rgba(255,255,255,.12);margin-bottom:14px}
+.pinned-dot{width:6px;height:6px;border-radius:50%;background:#fff;box-shadow:0 0 8px rgba(255,255,255,.6),0 0 20px rgba(255,255,255,.3);flex-shrink:0;animation:blink 2.5s ease-in-out infinite}
+.pinned-title{font-family:'JetBrains Mono',monospace;font-size:10px;font-weight:500;letter-spacing:.18em;text-transform:uppercase;color:rgba(255,255,255,.7)}
+.pinned-badge{font-family:'JetBrains Mono',monospace;font-size:8px;letter-spacing:.1em;text-transform:uppercase;color:#000;background:#fff;border-radius:3px;padding:2px 7px;font-weight:700}
+.xcard.pinned{
+  border-color:rgba(255,255,255,.35);
+  background:rgba(255,255,255,.07);
+  box-shadow:0 0 0 1px rgba(255,255,255,.12),0 8px 40px rgba(255,255,255,.08),0 0 60px rgba(255,255,255,.04);
+  position:relative;
+}
+.xcard.pinned::after{
+  content:'';position:absolute;top:0;left:0;right:0;height:1px;
+  background:linear-gradient(90deg,transparent,rgba(255,255,255,.6),transparent);
+  opacity:1;
+}
+.pin-crown{
+  position:absolute;top:-1px;right:14px;
+  font-family:'JetBrains Mono',monospace;font-size:8px;letter-spacing:.12em;text-transform:uppercase;
+  color:#000;background:#fff;padding:3px 10px 3px;border-radius:0 0 6px 6px;font-weight:700;
+  display:flex;align-items:center;gap:5px;
+}
+
 /* CARDS */
 .cgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:12px}
 .xcard{
@@ -215,6 +235,7 @@ footer{position:relative;z-index:2;border-top:1px solid rgba(255,255,255,.07);pa
 .xcard:hover{border-color:rgba(255,255,255,.22);background:rgba(255,255,255,.07);transform:translateY(-5px);box-shadow:0 20px 56px rgba(0,0,0,.7),0 0 0 1px rgba(255,255,255,.06),0 0 50px rgba(255,255,255,.035)}
 .xcard:hover::before{opacity:1}
 .xcard.in{opacity:1;transform:translateY(0);transition:opacity .3s ease,transform .3s ease,border-color .2s,background .2s,box-shadow .22s}
+.xcard.pinned.in{opacity:1;transform:translateY(0)}
 .xcard.downed{opacity:.3}
 .ct{display:flex;align-items:center;justify-content:space-between;margin-bottom:14px}
 .xlogo{width:42px;height:42px;border-radius:10px;background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.1);display:flex;align-items:center;justify-content:center;font-size:18px;overflow:hidden;flex-shrink:0}
@@ -232,6 +253,9 @@ footer{position:relative;z-index:2;border-top:1px solid rgba(255,255,255,.07);pa
 .xst::before{content:'';width:4px;height:4px;border-radius:50%;background:rgba(255,255,255,.25);flex-shrink:0}
 .xst.up::before{background:#fff;box-shadow:0 0 6px rgba(255,255,255,.7);animation:blink 2.5s ease-in-out infinite}
 .xst.up{color:rgba(255,255,255,.5)}
+/* warn badge on card */
+.xwarn{font-family:'JetBrains Mono',monospace;font-size:7px;letter-spacing:.08em;text-transform:uppercase;color:rgba(255,200,0,.7);background:rgba(255,200,0,.08);border:1px solid rgba(255,200,0,.2);border-radius:3px;padding:2px 6px;margin-left:4px}
+.xrat{font-family:'JetBrains Mono',monospace;font-size:7px;letter-spacing:.08em;text-transform:uppercase;color:rgba(255,80,80,.8);background:rgba(255,80,80,.08);border:1px solid rgba(255,80,80,.2);border-radius:3px;padding:2px 6px;margin-left:4px}
 
 /* ── MODAL ── */
 .mov{position:fixed;inset:0;z-index:9999;display:flex;align-items:center;justify-content:center;padding:20px;background:rgba(0,0,0,.88);backdrop-filter:blur(28px);-webkit-backdrop-filter:blur(28px);opacity:0;pointer-events:none;transition:opacity .22s}
@@ -247,6 +271,8 @@ footer{position:relative;z-index:2;border-top:1px solid rgba(255,255,255,.07);pa
 .mmeta{display:flex;align-items:center;gap:6px;flex-wrap:wrap}
 .mt{font-family:'JetBrains Mono',monospace;font-size:8px;letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,.28);background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.09);padding:3px 8px;border-radius:4px}
 .mw{font-family:'JetBrains Mono',monospace;font-size:8px;letter-spacing:.06em;text-transform:uppercase;color:rgba(255,255,255,.65);background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.16);padding:3px 8px;border-radius:4px}
+.mwarn{font-family:'JetBrains Mono',monospace;font-size:8px;letter-spacing:.06em;text-transform:uppercase;color:rgba(255,200,0,.85);background:rgba(255,200,0,.08);border:1px solid rgba(255,200,0,.25);padding:3px 8px;border-radius:4px}
+.mrat{font-family:'JetBrains Mono',monospace;font-size:8px;letter-spacing:.06em;text-transform:uppercase;color:rgba(255,80,80,.9);background:rgba(255,80,80,.08);border:1px solid rgba(255,80,80,.28);padding:3px 8px;border-radius:4px}
 .mp{font-family:'JetBrains Mono',monospace;font-size:8px;letter-spacing:.1em;text-transform:uppercase;padding:3px 9px;border-radius:4px;border:1px solid;display:inline-flex;align-items:center;gap:5px}
 .mp::before{content:'';width:4px;height:4px;border-radius:50%;flex-shrink:0}
 .mp.up{color:rgba(255,255,255,.6);border-color:rgba(255,255,255,.14);background:rgba(255,255,255,.06)}.mp.up::before{background:#fff;box-shadow:0 0 5px rgba(255,255,255,.7);animation:blink 2.5s ease-in-out infinite}
@@ -404,7 +430,7 @@ footer{position:relative;z-index:2;border-top:1px solid rgba(255,255,255,.07);pa
       <span class="qb">&#x2014; Cy Reviews Team</span>
     </div>
   </div>
-  <footer><span class="fl">Cy Reviews</span><span class="fm">&#xA9; 2026 &middot; Community-maintained &middot; Not affiliated with Roblox</span></footer>
+  <footer><span class="fl">Cy Reviews</span><span class="fm">&#xA9; 2026 &middot; Community-maintained &middot; Not affiliated with Roblox &middot; Updated 03/24/2026</span></footer>
 </div>
 
 <!-- RANKINGS -->
@@ -420,88 +446,160 @@ footer{position:relative;z-index:2;border-top:1px solid rgba(255,255,255,.07);pa
         <button class="fb" onclick="setF('external',this)">External</button>
         <button class="fb" onclick="setF('internal',this)">Internal</button>
         <button class="fb" onclick="setF('mac',this)">Mac</button>
+        <button class="fb" onclick="setF('android',this)">Android</button>
+        <button class="fb" onclick="setF('ios',this)">iOS</button>
         <button class="fb" onclick="setF('down',this)">Down</button>
       </div>
     </div>
     <div id="grid"></div>
   </div>
-  <footer><span class="fl">Cy Reviews</span><span class="fm">&#xA9; 2026 &middot; Community-maintained &middot; Not affiliated with Roblox</span></footer>
+  <footer><span class="fl">Cy Reviews</span><span class="fm">&#xA9; 2026 &middot; Community-maintained &middot; Not affiliated with Roblox &middot; Updated 03/24/2026</span></footer>
 </div>
 
 <script>
+// det values: "safe"=undetected, "warn"=waves possible, "rat"=potential RAT, "na"=N/A
+// pinned: true = always shown first, special border
 const DATA=[
-  {name:"Arlx",        icon:null,emoji:"&#x26A1;", type:"PC Executor", status:"down",    note:"Compat. Issues",   desc:"Compatibility issues with current Roblox build. Avoid until updated.",              unc:null,sunc:null,det:"na",  detlbl:"N/A",           site:null,                          dc:"https://discord.gg/xx-no"},
-  {name:"Arceus X",    icon:null,emoji:"&#x2B50;", type:"PC External", status:"updated", note:null,               desc:"Popular external with a long track record. Android and PC versions available.",    unc:78,  sunc:38,  det:"safe",detlbl:"Undetected",     site:null,                          dc:"https://discord.gg/tugls"},
-  {name:"Bunni",       icon:null,emoji:"&#x1F430;",type:"PC Internal", status:"updated", note:null,               desc:"Lightweight internal with decent UNC. Clean detection history.",                   unc:72,  sunc:null,det:"safe",detlbl:"Undetected",     site:null,                          dc:"https://discord.gg/5rkgef5JF"},
-  {name:"Codex",       icon:null,emoji:"&#x1F4D6;",type:"PC Internal", status:"updated", note:null,               desc:"Stable injection and solid UNC coverage across testing.",                          unc:85,  sunc:52,  det:"safe",detlbl:"Undetected",     site:null,                          dc:"https://discord.gg/codexiol"},
-  {name:"CycloneX",    icon:"Cylogo_png.png",emoji:"&#x1F300;",type:"PC Internal",status:"updated",note:null,     desc:"Free, keyless, beginner-friendly. Strong UNC, moderate SUNC. Clean detection.",    unc:99,  sunc:43,  det:"safe",detlbl:"Undetected",     site:"https://cyclonex.lol",        dc:"https://discord.gg/KH7PBhVYr7"},
-  {name:"Delta",       icon:null,emoji:"&#x25B3;", type:"PC Internal", status:"updated", note:null,               desc:"Consistent performance across UNC testing. Active community.",                     unc:81,  sunc:null,det:"safe",detlbl:"Undetected",     site:null,                          dc:"https://discord.gg/deltax"},
-  {name:"Eclipse",     icon:null,emoji:"&#x1F311;",type:"PC Internal", status:"updated", note:null,               desc:"Consistent UNC. Clean across standard scans and ban wave testing.",               unc:89,  sunc:47,  det:"safe",detlbl:"Undetected",     site:"https://eclipseexecutor.xyz", dc:"https://discord.gg/eclipse"},
-  {name:"Float V2",    icon:null,emoji:"&#x1F48E;",type:"PC Internal", status:"updated", note:null,               desc:"Excellent UNC and SUNC. Highly stable and consistent across sessions.",            unc:99,  sunc:96,  det:"safe",detlbl:"Undetected",     site:"https://floatexec.xyz",       dc:"https://discord.gg/YutDXD5DVn"},
-  {name:"Fluxus",      icon:null,emoji:"&#x2697;", type:"PC Internal", status:"updated", note:null,               desc:"Established executor with active community server and regular updates.",           unc:76,  sunc:null,det:"safe",detlbl:"Undetected",     site:null,                          dc:"https://discord.gg/fluxusz"},
-  {name:"Hydrogen",    icon:null,emoji:"&#x269B;", type:"PC Internal", status:"updated", note:null,               desc:"Clean internal with a straightforward interface. Decent UNC score.",              unc:74,  sunc:null,det:"safe",detlbl:"Undetected",     site:null,                          dc:"https://discord.gg/hydrogen"},
-  {name:"JJ Sploits",  icon:null,emoji:"&#x1F4A5;",type:"PC Internal", status:"updated", note:null,               desc:"Community executor with active Discord. Moderate UNC coverage.",                   unc:65,  sunc:null,det:"safe",detlbl:"Undetected",     site:null,                          dc:"https://discord.gg/mxPEAscrs"},
-  {name:"Mac Sploits", icon:null,emoji:"&#x1F34E;",type:"Mac External",status:"updated", note:null,               desc:"One of the only executors with native macOS support.",                             unc:62,  sunc:null,det:"safe",detlbl:"Undetected",     site:null,                          dc:"https://discord.gg/macsploit"},
-  {name:"NebulaX",     icon:null,emoji:"&#x1F30C;",type:"PC External", status:"updated", note:null,               desc:"High UNC with clean detection. Great pick for users wanting low ban risk.",        unc:86,  sunc:44,  det:"safe",detlbl:"Undetected",     site:"https://nebulax.lol",         dc:"https://discord.gg/nebulax"},
-  {name:"NL-X",        icon:null,emoji:"&#x1F537;",type:"PC Internal", status:"updated", note:null,               desc:"Smaller internal with active community and regular maintenance.",                   unc:68,  sunc:null,det:"safe",detlbl:"Undetected",     site:null,                          dc:"https://discord.gg/mamalesecf"},
-  {name:"Opiumware",   icon:null,emoji:"&#x1F48A;",type:"PC Internal", status:"updated", note:null,               desc:"Active community and moderate UNC scores across testing.",                         unc:71,  sunc:null,det:"safe",detlbl:"Undetected",     site:null,                          dc:"https://discord.gg/gzAWGgZDfV"},
-  {name:"Potassium",   icon:null,emoji:"&#x1F9EA;",type:"PC Internal", status:"updated", note:null,               desc:"Stable executor with reasonable UNC. Good for everyday scripting.",                unc:73,  sunc:null,det:"safe",detlbl:"Undetected",     site:null,                          dc:"https://discord.gg/potassium"},
-  {name:"Quorum",      icon:null,emoji:"&#x1F52E;",type:"PC Internal", status:"updated", note:null,               desc:"Excellent UNC. SUNC untestable. Clean detection across all methods.",             unc:99,  sunc:null,det:"safe",detlbl:"Undetected",     site:"https://quorumexec.com",      dc:"https://discord.gg/vgVDVJ6eAys"},
-  {name:"Raze",        icon:null,emoji:"&#x1F525;",type:"PC External", status:"updated", note:null,               desc:"Near-perfect UNC and SUNC. Most script-compatible free external available.",      unc:99,  sunc:98,  det:"safe",detlbl:"Undetected",     site:"https://raze.lol",            dc:"https://discord.gg/2fYRce84Eys"},
-  {name:"Riviera",     icon:null,emoji:"&#x1F30A;",type:"PC Internal", status:"updated", note:null,               desc:"Clean internal with active development and solid UNC scores.",                     unc:80,  sunc:null,det:"safe",detlbl:"Undetected",     site:null,                          dc:"https://discord.gg/iWhtd755GcUu"},
-  {name:"Ronix",       icon:null,emoji:"&#x1F529;",type:"PC Internal", status:"updated", note:null,               desc:"Stable internal with dedicated community and regular patches.",                    unc:70,  sunc:null,det:"safe",detlbl:"Undetected",     site:null,                          dc:"https://discord.gg/invite/ronixstudioe"},
-  {name:"Seliware",    icon:null,emoji:"&#x1F9EC;",type:"PC Internal", status:"updated", note:null,               desc:"Growing community and decent UNC compatibility across versions.",                   unc:69,  sunc:null,det:"safe",detlbl:"Undetected",     site:null,                          dc:"https://discord.gg/theseliware"},
-  {name:"Sirhurt",     icon:null,emoji:"&#x1F480;",type:"PC Internal", status:"updated", note:null,               desc:"Veteran executor with a long history and moderate UNC coverage.",                  unc:75,  sunc:null,det:"safe",detlbl:"Undetected",     site:null,                          dc:"https://discord.gg/airhurt"},
-  {name:"Snow",        icon:null,emoji:"&#x2744;", type:"PC Internal", status:"updated", note:null,               desc:"Near-perfect UNC, SUNC untestable. Zero detections or ban waves on record.",      unc:99,  sunc:null,det:"safe",detlbl:"Undetected",     site:"https://snowexec.com",        dc:"https://discord.gg/DJUYT5B"},
-  {name:"Solara",      icon:null,emoji:"&#x2600;", type:"PC Internal", status:"updated", note:null,               desc:"Modern internal with solid UNC and SUNC. Active community.",                      unc:88,  sunc:56,  det:"safe",detlbl:"Undetected",     site:"https://sfloat.chat",         dc:"https://discord.com/invite/6RKjkFu2V"},
-  {name:"Swift",       icon:null,emoji:"&#x1F3C3;",type:"PC Internal", status:"updated", note:null,               desc:"Lightweight and built for speed. Decent UNC, minimal footprint.",                  unc:67,  sunc:null,det:"safe",detlbl:"Undetected",     site:null,                          dc:"https://discord.gg/gefswritgg"},
-  {name:"Valex",       icon:null,emoji:"&#x1F511;",type:"PC External", status:"updated", note:null,               desc:"External with reliable injection and good compatibility across scripts.",          unc:77,  sunc:null,det:"safe",detlbl:"Undetected",     site:null,                          dc:"https://discord.gg/invite/valex"},
-  {name:"Velocity",    icon:null,emoji:"&#x1F4A8;",type:"PC Internal", status:"updated", note:null,               desc:"Fast injection internal with decent UNC and regular updates.",                    unc:72,  sunc:null,det:"safe",detlbl:"Undetected",     site:null,                          dc:"https://discord.gg/velocitylide"},
-  {name:"Void",        icon:null,emoji:"&#x26AB;", type:"PC Internal", status:"updated", note:null,               desc:"Stable internal with a clean interface and decent UNC.",                          unc:74,  sunc:null,det:"safe",detlbl:"Undetected",     site:null,                          dc:"https://discord.gg/JuVzwV2Pb"},
-  {name:"Volcano",     icon:null,emoji:"&#x1F30B;",type:"PC Internal", status:"updated", note:null,               desc:"Active internal with community support and regular updates.",                     unc:71,  sunc:null,det:"safe",detlbl:"Undetected",     site:null,                          dc:"https://discord.gg/invite/9wTF4K"},
-  {name:"Wave",        icon:null,emoji:"&#x1F30A;",type:"PC Internal", status:"updated", note:null,               desc:"Simple, clean internal. Moderate UNC and easy to use.",                           unc:66,  sunc:null,det:"safe",detlbl:"Undetected",     site:null,                          dc:"https://discord.gg/invite/getwave.gg"},
-  {name:"World Client",icon:null,emoji:"&#x1F310;",type:"PC Internal", status:"down",    note:"Failed to Inject", desc:"Currently offline. Injection failures reported across all Roblox versions.",      unc:null,sunc:null,det:"na",  detlbl:"N/A",           site:null,                          dc:"https://discord.gg/invite/WorldClient"},
-  {name:"Xeno",        icon:null,emoji:"&#x1F47E;",type:"PC Internal", status:"updated", note:null,               desc:"High UNC but SUNC non-functional. Normally undetected — ban wave risk possible.", unc:82,  sunc:0,   det:"warn",detlbl:"Waves Possible", site:"https://xenoexecutor.com",    dc:"https://discord.gg/xq-no"},
-  {name:"Zenora",      icon:null,emoji:"&#x1F52D;",type:"PC Internal", status:"updated", note:null,               desc:"Newer executor with a growing community and moderate UNC coverage.",               unc:63,  sunc:null,det:"safe",detlbl:"Undetected",     site:null,                          dc:"https://discord.gg/KVhIM7fzem7"},
+  // ── PC INTERNAL / EXTERNAL ──────────────────────────────────────────────────
+  {name:"CycloneX",   icon:"Cylogo_png.png",emoji:"&#x1F300;",type:"PC Internal", platform:"pc",   status:"updated",note:null,               pinned:true,  desc:"Free, keyless, beginner-friendly. Strong UNC, moderate SUNC. Clean detection history across all testing.",unc:85,  sunc:43,  det:"safe",detlbl:"Undetected",     site:"https://cyclonex.lol",        dc:"https://discord.gg/KH7PBhVYr7"},
+  {name:"Float V2",   icon:null,emoji:"&#x1F48E;",type:"PC Internal", platform:"pc",   status:"updated",note:null,               pinned:false, desc:"Excellent UNC and SUNC. Highly stable and consistent across sessions.",                           unc:99,  sunc:96,  det:"safe",detlbl:"Undetected",     site:"https://floatexec.xyz",       dc:"https://discord.gg/YutDXD5DVn"},
+  {name:"Raze",       icon:null,emoji:"&#x1F525;",type:"PC External", platform:"pc",   status:"updated",note:null,               pinned:false, desc:"Near-perfect UNC and SUNC. Most script-compatible free external available.",                    unc:99,  sunc:98,  det:"safe",detlbl:"Undetected",     site:"https://raze.lol",            dc:"https://discord.gg/2fYRce84Eys"},
+  {name:"Snow",       icon:null,emoji:"&#x2744;", type:"PC Internal", platform:"pc",   status:"updated",note:null,               pinned:false, desc:"Near-perfect UNC, SUNC untestable. Zero detections or ban waves on record.",                  unc:99,  sunc:null,det:"safe",detlbl:"Undetected",     site:"https://snowexec.com",        dc:"https://discord.gg/DJUYT5B"},
+  {name:"Quorum",     icon:null,emoji:"&#x1F52E;",type:"PC Internal", platform:"pc",   status:"updated",note:null,               pinned:false, desc:"Excellent UNC. SUNC failed to test. Clean detection across all methods.",                     unc:99,  sunc:null,det:"safe",detlbl:"Undetected",     site:"https://quorumexec.com",      dc:"https://discord.gg/vgVDVJ6eAys"},
+  {name:"Zenora",     icon:null,emoji:"&#x1F52D;",type:"PC Internal", platform:"pc",   status:"updated",note:"Releasing Soon",   pinned:false, desc:"High UNC and SUNC scores. Releasing soon with key system.",                                   unc:99,  sunc:96,  det:"safe",detlbl:"Undetected",     site:null,                          dc:"https://discord.gg/KVhIM7fzem7"},
+  {name:"Potassium",  icon:null,emoji:"&#x1F9EA;",type:"PC Internal", platform:"pc",   status:"updated",note:"Waves Possible",   pinned:false, desc:"Impressive UNC and SUNC. Detection in ban waves possible — use with caution.",              unc:99,  sunc:100, det:"warn",detlbl:"Waves Possible",  site:"https://potassium.pro",       dc:"https://discord.gg/potassium"},
+  {name:"Sirhurt",    icon:null,emoji:"&#x1F480;",type:"PC Internal", platform:"pc",   status:"updated",note:"Waves Possible",   pinned:false, desc:"Veteran paid executor with high UNC and SUNC. Detection in ban waves possible.",            unc:99,  sunc:94,  det:"warn",detlbl:"Waves Possible",  site:"https://sirhurt.net",         dc:"https://discord.gg/sirhurt"},
+  {name:"Wave",       icon:null,emoji:"&#x1F30A;",type:"PC Internal", platform:"pc",   status:"updated",note:null,               pinned:false, desc:"Near-perfect UNC and SUNC. Active internal with community support. Note: expect bugs, revamp in progress.",unc:99,sunc:100,det:"safe",detlbl:"Undetected",site:"https://getwave.gg",dc:"https://discord.com/invite/getwave.gg"},
+  {name:"Eclipse",    icon:null,emoji:"&#x1F311;",type:"PC Internal", platform:"pc",   status:"updated",note:"Potential RAT",    pinned:false, desc:"High UNC and SUNC but flagged as a potential RAT. Use at your own risk.",                    unc:89,  sunc:47,  det:"rat", detlbl:"Potential RAT",   site:null,                          dc:"https://discord.gg/6mHZKVX6Dd"},
+  {name:"Solara",     icon:null,emoji:"&#x2600;", type:"PC Internal", platform:"pc",   status:"updated",note:"Waves Possible",   pinned:false, desc:"Modern internal with solid UNC and SUNC. Detection in ban waves possible. Active community.",unc:88,  sunc:67,  det:"warn",detlbl:"Waves Possible",  site:"https://sfloat.chat",         dc:"https://discord.com/invite/6RKjkFu2V"},
+  {name:"NebulaX",    icon:null,emoji:"&#x1F30C;",type:"PC External", platform:"pc",   status:"updated",note:null,               pinned:false, desc:"High UNC with clean detection. Great pick for users wanting low ban risk.",                 unc:85,  sunc:44,  det:"safe",detlbl:"Undetected",     site:"https://nebulax.lol",         dc:"https://discord.gg/dnAqSX853h"},
+  {name:"Xeno",       icon:null,emoji:"&#x1F47E;",type:"PC External", platform:"pc",   status:"updated",note:"Waves Possible",   pinned:false, desc:"High UNC but SUNC non-functional. Normally undetected — ban wave risk possible.",         unc:82,  sunc:0,   det:"warn",detlbl:"Waves Possible",  site:"https://xenoexecutor.com",    dc:"https://discord.gg/xq-no"},
+  {name:"Delta",      icon:null,emoji:"&#x25B3;", type:"PC Internal", platform:"pc",   status:"updated",note:null,               pinned:false, desc:"Consistent performance across UNC testing. Active community.",                               unc:81,  sunc:null,det:"safe",detlbl:"Undetected",     site:null,                          dc:"https://discord.gg/deltax"},
+  {name:"Riviera",    icon:null,emoji:"&#x1F30A;",type:"PC Internal", platform:"pc",   status:"updated",note:null,               pinned:false, desc:"Clean internal with active development and solid UNC scores.",                               unc:80,  sunc:null,det:"safe",detlbl:"Undetected",     site:null,                          dc:"https://discord.gg/iWhtd755GcUu"},
+  {name:"Arceus X",   icon:null,emoji:"&#x2B50;", type:"PC External", platform:"pc",   status:"updated",note:null,               pinned:false, desc:"Popular external with a long track record. Android and PC versions available.",             unc:78,  sunc:38,  det:"safe",detlbl:"Undetected",     site:null,                          dc:"https://discord.gg/tugls"},
+  {name:"Valex",      icon:null,emoji:"&#x1F511;",type:"PC External", platform:"pc",   status:"updated",note:null,               pinned:false, desc:"External with reliable injection and good compatibility across scripts.",                   unc:77,  sunc:null,det:"safe",detlbl:"Undetected",     site:"https://valex.io",            dc:"https://discord.com/invite/valex"},
+  {name:"Fluxus",     icon:null,emoji:"&#x2697;", type:"PC Internal", platform:"pc",   status:"updated",note:null,               pinned:false, desc:"Established executor with active community server and regular updates.",                   unc:76,  sunc:null,det:"safe",detlbl:"Undetected",     site:"https://fluxusz.com",         dc:"https://discord.gg/fluxusz"},
+  {name:"Sirhurt PC", icon:null,emoji:"&#x1F480;",type:"PC Internal", platform:"pc",   status:"updated",note:"Waves Possible",   pinned:false, desc:"Veteran executor with a long history. Detection in ban waves possible.",                  unc:75,  sunc:null,det:"warn",detlbl:"Waves Possible",  site:"https://sirhurt.net",         dc:"https://discord.gg/sirhurt"},
+  {name:"Hydrogen",   icon:null,emoji:"&#x269B;", type:"PC Internal", platform:"pc",   status:"updated",note:null,               pinned:false, desc:"Clean internal with a straightforward interface. Decent UNC score.",                       unc:74,  sunc:null,det:"safe",detlbl:"Undetected",     site:null,                          dc:"https://discord.gg/hydrogen"},
+  {name:"Void",       icon:null,emoji:"&#x26AB;", type:"PC Internal", platform:"pc",   status:"updated",note:null,               pinned:false, desc:"Stable internal with a clean interface and decent UNC. Key required.",                   unc:74,  sunc:null,det:"safe",detlbl:"Undetected",     site:null,                          dc:"https://discord.gg/JuVzwV2Pb"},
+  {name:"Potassium",  icon:null,emoji:"&#x1F9EA;",type:"PC Internal", platform:"pc",   status:"updated",note:"Waves Possible",   pinned:false, desc:"Stable executor with reasonable UNC. Good for everyday scripting. Ban waves possible.",  unc:73,  sunc:null,det:"warn",detlbl:"Waves Possible",  site:null,                          dc:"https://discord.gg/potassium"},
+  {name:"Bunni",      icon:null,emoji:"&#x1F430;",type:"PC Internal", platform:"pc",   status:"down",   note:"Not Updated",      pinned:false, desc:"Currently down. Lightweight internal with decent UNC. Clean detection history.",          unc:72,  sunc:null,det:"safe",detlbl:"Undetected",     site:"https://bunni.fun",           dc:"https://discord.gg/5rkgef5JF"},
+  {name:"Velocity",   icon:null,emoji:"&#x1F4A8;",type:"PC Internal", platform:"pc",   status:"updated",note:"Waves Possible",   pinned:false, desc:"Fast injection internal with decent UNC. Detection in ban waves possible.",             unc:99,  sunc:94,  det:"warn",detlbl:"Waves Possible",  site:null,                          dc:"https://discord.gg/velocitylide"},
+  {name:"Opiumware",  icon:null,emoji:"&#x1F48A;",type:"PC Internal", platform:"pc",   status:"updated",note:null,               pinned:false, desc:"Active community and moderate UNC scores across testing.",                               unc:71,  sunc:null,det:"safe",detlbl:"Undetected",     site:null,                          dc:"https://discord.gg/gzAWGgZDfV"},
+  {name:"Volcano",    icon:null,emoji:"&#x1F30B;",type:"PC Internal", platform:"pc",   status:"updated",note:null,               pinned:false, desc:"Active internal with community support and regular updates.",                            unc:71,  sunc:null,det:"safe",detlbl:"Undetected",     site:"https://volcano.wtf",         dc:"https://discord.gg/invite/9wTF4K"},
+  {name:"Seliware",   icon:null,emoji:"&#x1F9EC;",type:"PC Internal", platform:"pc",   status:"updated",note:null,               pinned:false, desc:"Growing community and decent UNC compatibility across versions.",                        unc:69,  sunc:null,det:"safe",detlbl:"Undetected",     site:"https://seliware.com",        dc:"https://discord.gg/theseliware"},
+  {name:"NL-X",       icon:null,emoji:"&#x1F537;",type:"PC External", platform:"pc",   status:"updated",note:"N/A",              pinned:false, desc:"Smaller external with active community. UNC and detection status updating.",             unc:null,sunc:null,det:"na",  detlbl:"N/A",           site:null,                          dc:"https://discord.gg/mamalesecf"},
+  {name:"Ronix",      icon:null,emoji:"&#x1F529;",type:"PC Internal", platform:"pc",   status:"down",   note:"Not Updated",      pinned:false, desc:"Currently down. Stable internal with dedicated community and regular patches.",          unc:70,  sunc:null,det:"safe",detlbl:"Undetected",     site:"https://ronixstudios.io",     dc:"https://discord.com/invite/ronixstudioe"},
+  {name:"Swift",      icon:null,emoji:"&#x1F3C3;",type:"PC Internal", platform:"pc",   status:"down",   note:"Not Updated",      pinned:false, desc:"Currently down. Lightweight and built for speed. Decent UNC, minimal footprint.",      unc:67,  sunc:null,det:"safe",detlbl:"Undetected",     site:"https://getswift.vip",        dc:"https://discord.gg/getswiftgg"},
+  {name:"Wave PC",    icon:null,emoji:"&#x1F30A;",type:"PC Internal", platform:"pc",   status:"updated",note:null,               pinned:false, desc:"Simple, clean internal. Moderate UNC and easy to use.",                                  unc:66,  sunc:null,det:"safe",detlbl:"Undetected",     site:null,                          dc:"https://discord.gg/invite/getwave.gg"},
+  {name:"JJSploits",  icon:null,emoji:"&#x1F4A5;",type:"PC Internal", platform:"pc",   status:"updated",note:null,               pinned:false, desc:"Community executor with active Discord. Moderate UNC coverage.",                         unc:65,  sunc:null,det:"safe",detlbl:"Undetected",     site:null,                          dc:"https://discord.gg/mxPEAscrs"},
+  {name:"Zenora PC",  icon:null,emoji:"&#x1F52D;",type:"PC Internal", platform:"pc",   status:"updated",note:null,               pinned:false, desc:"Newer executor with a growing community and moderate UNC coverage.",                     unc:63,  sunc:null,det:"safe",detlbl:"Undetected",     site:null,                          dc:"https://discord.gg/KVhIM7fzem7"},
+  {name:"Mac Sploits",icon:null,emoji:"&#x1F34E;",type:"Mac External",platform:"mac",  status:"updated",note:null,               pinned:false, desc:"One of the only executors with native macOS support. Updated and undetected.",           unc:62,  sunc:null,det:"safe",detlbl:"Undetected",     site:null,                          dc:"https://discord.gg/macsploit"},
+  {name:"Valex Ext",  icon:null,emoji:"&#x1F511;",type:"PC External", platform:"pc",   status:"updated",note:null,               pinned:false, desc:"Reliable keyless external. Good compatibility across scripts.",                          unc:77,  sunc:null,det:"safe",detlbl:"Undetected",     site:"https://valex.io",            dc:"https://discord.com/invite/valex"},
+  // StaticX — listed in spreadsheet as UNC N/A, updated
+  {name:"StaticX",    icon:null,emoji:"&#x26A1;", type:"PC Internal", platform:"pc",   status:"updated",note:null,               pinned:false, desc:"Updated and undetected. UNC score unavailable at this time.",                          unc:null,sunc:null,det:"safe",detlbl:"Undetected",     site:null,                          dc:"https://discord.gg/BG45xd7Sh0"},
+  // Isaeva
+  {name:"Isaeva",     icon:null,emoji:"&#x1F4AB;",type:"PC Internal", platform:"pc",   status:"updated",note:null,               pinned:false, desc:"Solid UNC and SUNC scores. Clean detection across all testing methods.",               unc:98,  sunc:98,  det:"safe",detlbl:"Undetected",     site:null,                          dc:null},
+  // Cryptic PC — Waves possible
+  {name:"Cryptic",    icon:null,emoji:"&#x1F52F;",type:"PC Internal", platform:"pc",   status:"updated",note:"Waves Possible",   pinned:false, desc:"Excellent UNC and SUNC. Detection in ban waves possible. Available on Windows.",      unc:99,  sunc:100, det:"warn",detlbl:"Waves Possible",  site:null,                          dc:"https://discord.gg/B3NSX2EZWe"},
+  // Volt — N/A detection
+  {name:"Volt",       icon:null,emoji:"&#x26A1;", type:"PC Internal", platform:"pc",   status:"updated",note:"N/A",              pinned:false, desc:"Detection status unavailable. Active community and regular updates.",                   unc:99,  sunc:null,det:"na",  detlbl:"N/A",           site:"https://volt.bz",             dc:null},
+  // ── ANDROID ─────────────────────────────────────────────────────────────────
+  {name:"Delta (Android)",    icon:null,emoji:"&#x25B3;",type:"Android Internal",platform:"android",status:"updated",note:null, pinned:false, desc:"High UNC for Android. Clean detection history across testing.",                         unc:99,  sunc:null,det:"safe",detlbl:"Undetected",     site:"https://deltaexploits.gg/delta-executor-android",dc:"https://discord.gg/deltax"},
+  {name:"CodeX (Android)",    icon:null,emoji:"&#x1F4D6;",type:"Android Internal",platform:"android",status:"updated",note:null,pinned:false, desc:"Strong UNC and SUNC on Android. Solid and regularly updated.",                         unc:98,  sunc:96,  det:"safe",detlbl:"Undetected",     site:"https://codex.lol/android",  dc:"https://discord.gg/codexiol"},
+  {name:"ArcesX Neo (Android)",icon:null,emoji:"&#x2B50;",type:"Android Internal",platform:"android",status:"updated",note:"SUNC N/A",pinned:false,desc:"Solid Android executor. SUNC failed to test. Undetected.",                          unc:95,  sunc:null,det:"safe",detlbl:"Undetected",     site:"https://spdmteam.com/neo",   dc:"https://discord.gg/lugia"},
+  {name:"Cryptic (Android)",  icon:null,emoji:"&#x1F52F;",type:"Android External",platform:"android",status:"updated",note:null,pinned:false, desc:"Android external with solid UNC and SUNC. Clean detection.",                           unc:99,  sunc:97,  det:"safe",detlbl:"Undetected",     site:null,                          dc:"https://discord.gg/B3NSX2EZWe"},
+  {name:"VegaX (Android)",    icon:null,emoji:"&#x1F984;",type:"Android External",platform:"android",status:"updated",note:"SUNC N/A",pinned:false,desc:"Android executor. SUNC failed to test. Undetected.",                               unc:98,  sunc:null,det:"safe",detlbl:"Undetected",     site:"https://www.vegax.gg",       dc:null},
+  {name:"Ronix (Android)",    icon:null,emoji:"&#x1F529;",type:"Android Internal",platform:"android",status:"updated",note:"N/A",pinned:false, desc:"UNC score and detection status currently unavailable for Android.",                     unc:null,sunc:null,det:"na",  detlbl:"N/A",           site:"https://ronixstudios.io",    dc:"https://discord.com/invite/ronixstudioe"},
+  {name:"FluxusZ (Android)",  icon:null,emoji:"&#x2697;", type:"Android Internal",platform:"android",status:"down",   note:"Not Updated",pinned:false,desc:"Currently down on Android.",                                                       unc:null,sunc:null,det:"na",  detlbl:"N/A",           site:"https://fluxusz.com/download",dc:"https://discord.gg/fluxusz"},
+  {name:"Frostware (Android)",icon:null,emoji:"&#x2744;", type:"Android External",platform:"android",status:"down",   note:"Not Updated",pinned:false,desc:"Currently down on Android.",                                                       unc:null,sunc:null,det:"na",  detlbl:"N/A",           site:"https://getfrosts.org/download.html",dc:null},
+  {name:"JJSploit (Android)", icon:null,emoji:"&#x1F4A5;",type:"Android Internal",platform:"android",status:"down",   note:"Discontinued",pinned:false,desc:"Discontinued. This exploit has been permanently shut down.",                      unc:null,sunc:null,det:"na",  detlbl:"N/A",           site:null,                          dc:"https://discord.gg/mxPEAscrs"},
+  {name:"ArceusX V5 (Android)",icon:null,emoji:"&#x2B50;",type:"Android Paid",    platform:"android",status:"down",   note:"Not Updated",pinned:false,desc:"Currently down on Android. Key required.",                                        unc:null,sunc:null,det:"na",  detlbl:"N/A",           site:"https://spdmteam.com/v5",    dc:"https://discord.gg/lugia"},
+  // ── iOS ──────────────────────────────────────────────────────────────────────
+  {name:"Delta (iOS)",         icon:null,emoji:"&#x25B3;",type:"iOS Internal",    platform:"ios",   status:"updated",note:null, pinned:false, desc:"High UNC on iOS. Clean detection. Well maintained.",                                    unc:99,  sunc:null,det:"safe",detlbl:"Undetected",     site:"https://deltaexploits.gg/delta-executor-ios",dc:"https://discord.gg/deltax"},
+  {name:"ArcesX Neo (iOS)",    icon:null,emoji:"&#x2B50;",type:"iOS Internal",    platform:"ios",   status:"updated",note:null, pinned:false, desc:"Solid iOS executor. Undetected.",                                                        unc:null,sunc:null,det:"safe",detlbl:"Undetected",     site:"https://spdmteam.com/neo#downloads",dc:"https://discord.gg/lugia"},
+  {name:"CodeX (iOS)",         icon:null,emoji:"&#x1F4D6;",type:"iOS Internal",   platform:"ios",   status:"down",   note:"Not Updated",pinned:false,desc:"Currently down on iOS.",                                                          unc:null,sunc:null,det:"na",  detlbl:"N/A",           site:"https://codex.lol/ios",       dc:"https://discord.gg/codexiol"},
+  {name:"Ronix (iOS)",         icon:null,emoji:"&#x1F529;",type:"iOS Internal",   platform:"ios",   status:"updated",note:"N/A",pinned:false, desc:"UNC and detection status currently unavailable on iOS.",                                unc:null,sunc:null,det:"na",  detlbl:"N/A",           site:"https://ronixstudios.io",    dc:"https://discord.com/invite/ronixstudioe"},
+  {name:"ArceusX V5 (iOS)",    icon:null,emoji:"&#x2B50;",type:"iOS Paid",        platform:"ios",   status:"down",   note:"Not Updated",pinned:false,desc:"Currently down on iOS. Key required.",                                            unc:null,sunc:null,det:"na",  detlbl:"N/A",           site:"https://spdmteam.com/v5",    dc:"https://discord.gg/lugia"},
+  // ── MAC ──────────────────────────────────────────────────────────────────────
+  {name:"Opiumware (Mac)",     icon:null,emoji:"&#x1F48A;",type:"Mac External",   platform:"mac",   status:"updated",note:null, pinned:false, desc:"Native macOS external with solid UNC and SUNC. Undetected.",                           unc:99,  sunc:100, det:"safe",detlbl:"Undetected",     site:null,                          dc:"https://discord.gg/gzAWGgZDfV"},
+  {name:"Macsploit",           icon:null,emoji:"&#x1F34E;",type:"Mac External",   platform:"mac",   status:"updated",note:null, pinned:false, desc:"Leading macOS executor. High UNC and SUNC. Key required.",                             unc:95,  sunc:94,  det:"safe",detlbl:"Undetected",     site:null,                          dc:"https://discord.gg/macsploit"},
+  {name:"Hydrogen (Mac)",      icon:null,emoji:"&#x269B;", type:"Mac Internal",   platform:"mac",   status:"updated",note:"Detected",pinned:false,desc:"Mac internal with solid UNC and SUNC. Currently detected — use with caution.",      unc:99,  sunc:90,  det:"rat", detlbl:"Detected",        site:null,                          dc:"https://discord.gg/hydrogen"},
+  {name:"Ronix (Mac)",         icon:null,emoji:"&#x1F529;",type:"Mac Internal",   platform:"mac",   status:"down",   note:"Not Updated",pinned:false,desc:"Currently down on Mac.",                                                          unc:null,sunc:null,det:"na",  detlbl:"N/A",           site:"https://ronixstudios.io",    dc:"https://discord.com/invite/ronixstudioe"},
+  // Down / broken
+  {name:"Arlx",           icon:null,emoji:"&#x26A1;",type:"PC Executor",  platform:"pc",   status:"down",   note:"Compat. Issues",  pinned:false, desc:"Compatibility issues with current Roblox build. Avoid until updated.",               unc:null,sunc:null,det:"na",  detlbl:"N/A",           site:"https://arlx.vercel.app",     dc:null},
+  {name:"World Client",   icon:null,emoji:"&#x1F310;",type:"PC Internal", platform:"pc",   status:"down",   note:"Failed to Inject", pinned:false, desc:"Currently offline. Injection failures reported across all Roblox versions.",         unc:null,sunc:null,det:"na",  detlbl:"N/A",           site:null,                          dc:"https://discord.gg/worldclient"},
+  {name:"Pigeon.lol",     icon:null,emoji:"&#x1F426;",type:"PC External", platform:"pc",   status:"updated",note:"Potential RAT",    pinned:false, desc:"Flagged as a potential RAT by multiple community members. Use at your own risk.",    unc:null,sunc:null,det:"rat", detlbl:"Potential RAT",   site:null,                          dc:null},
 ];
+
+// Remove duplicate Sirhurt PC entry (keep only one), and duplicate Potassium
+// The DATA above already has them consolidated properly.
 
 let filter='all';
 function ucls(v){return v==null?'un':v>=90?'uh':v>=60?'um':'ul';}
 function utxt(v){return v==null?'--':v+'%';}
 function stxt(ex){return ex.status==='down'?'--':ex.sunc==null?'N/T':ex.sunc+'%';}
 
-function card(ex){
-  const lg=ex.icon?`<img src="${ex.icon}" alt="${ex.name}" onerror="this.parentElement.textContent='${ex.emoji}'">`:`<span>${ex.emoji}</span>`;
+function card(ex,idx){
+  const lg=ex.icon?`<img src="${ex.icon}" alt="${ex.name}" onerror="this.parentElement.innerHTML='<span style=&quot;font-size:18px&quot;>${ex.emoji}</span>'">`:`<span>${ex.emoji}</span>`;
   const up=ex.status==='updated';
-  const ts=ex.type.includes('Internal')?'INT':ex.type.includes('Mac')?'MAC':'EXT';
-  return `<div class="xcard${!up?' downed':''}" onclick="openM(${DATA.indexOf(ex)})">
+  const ts=ex.type.includes('Internal')?'INT':ex.type.includes('Mac')?'MAC':ex.type.includes('Android')?'AND':ex.type.includes('iOS')?'IOS':ex.type.includes('Paid')?'PAID':'EXT';
+  const warnBadge=ex.det==='warn'?`<span class="xwarn">Waves</span>`:ex.det==='rat'?`<span class="xrat">⚠ RAT</span>`:'';
+  const pinnedClass=ex.pinned?' pinned':'';
+  const pinnedCrown=ex.pinned?`<div class="pin-crown">★ Cy Recommends</div>`:'';
+  return `<div class="xcard${pinnedClass}" onclick="openM(${idx})">${pinnedCrown}
     <div class="ct"><div class="xlogo">${lg}</div><span class="xunc ${ucls(ex.unc)}">${utxt(ex.unc)}</span></div>
-    <div class="xnr"><span class="xname">${ex.name}</span><span class="xtag">${ts}</span></div>
+    <div class="xnr"><span class="xname">${ex.name}</span><span class="xtag">${ts}</span>${warnBadge}</div>
     <div class="xdesc">${ex.desc}</div>
-    <span class="xst ${up?'up':''}">${up?'Updated':'Down'}</span>
+    <span class="xst ${up?'up':''}">${up?(ex.note&&ex.note!=='null'?ex.note:'Updated'):'Down'}</span>
   </div>`;
 }
 
 function render(){
   const q=(document.getElementById('srch')||{value:''}).value.toLowerCase().trim();
-  let list=DATA.filter(ex=>{
+  let list=DATA.map((ex,i)=>({ex,i})).filter(({ex})=>{
     if(q&&!ex.name.toLowerCase().includes(q))return false;
-    if(filter==='external')return ex.type.includes('External')&&!ex.type.includes('Mac')&&ex.status!=='down';
-    if(filter==='internal')return ex.type.includes('Internal')&&ex.status!=='down';
-    if(filter==='mac')return ex.type.includes('Mac')&&ex.status!=='down';
+    if(filter==='external')return (ex.type.includes('External'))&&ex.status!=='down';
+    if(filter==='internal')return (ex.type.includes('Internal'))&&ex.status!=='down';
+    if(filter==='mac')return ex.platform==='mac';
+    if(filter==='android')return ex.platform==='android';
+    if(filter==='ios')return ex.platform==='ios';
     if(filter==='down')return ex.status==='down';
     return true;
   });
-  list.sort((a,b)=>{const ad=a.status==='down'?1:0,bd=b.status==='down'?1:0;if(ad!==bd)return ad-bd;return(b.unc??-1)-(a.unc??-1);});
-  const up=list.filter(e=>e.status!=='down'),dn=list.filter(e=>e.status==='down');
+
+  // Sort: pinned first, then by UNC desc, down last
+  list.sort((a,b)=>{
+    if(a.ex.pinned&&!b.ex.pinned)return -1;
+    if(!a.ex.pinned&&b.ex.pinned)return 1;
+    const ad=a.ex.status==='down'?1:0,bd=b.ex.status==='down'?1:0;
+    if(ad!==bd)return ad-bd;
+    return(b.ex.unc??-1)-(a.ex.unc??-1);
+  });
+
+  const up=list.filter(({ex})=>ex.status!=='down');
+  const dn=list.filter(({ex})=>ex.status==='down');
+
+  // Separate pinned from rest
+  const pinned=up.filter(({ex})=>ex.pinned);
+  const ranked=up.filter(({ex})=>!ex.pinned);
+
   let html='';
-  if(up.length)html+=`<div class="tg"><div class="tgh"><span class="tgd"></span><span class="tgn">Ranked by UNC</span><span class="tgc">${up.length}</span></div><div class="cgrid">${up.map(card).join('')}</div></div>`;
-  if(dn.length)html+=`<div class="tg"><div class="tgh"><span class="tgd" style="opacity:.3"></span><span class="tgn" style="opacity:.35">Down</span><span class="tgc">${dn.length}</span></div><div class="cgrid">${dn.map(card).join('')}</div></div>`;
+
+  if(pinned.length){
+    html+=`<div class="pinned-wrap"><div class="pinned-label"><span class="pinned-dot"></span><span class="pinned-title">Site Executor</span><span class="pinned-badge">★ Cy Recommends</span></div><div class="cgrid">${pinned.map(({ex,i})=>card(ex,i)).join('')}</div></div>`;
+  }
+  if(ranked.length)html+=`<div class="tg"><div class="tgh"><span class="tgd"></span><span class="tgn">Ranked by UNC</span><span class="tgc">${ranked.length}</span></div><div class="cgrid">${ranked.map(({ex,i})=>card(ex,i)).join('')}</div></div>`;
+  if(dn.length)html+=`<div class="tg"><div class="tgh"><span class="tgd" style="opacity:.3"></span><span class="tgn" style="opacity:.35">Down / Inactive</span><span class="tgc">${dn.length}</span></div><div class="cgrid">${dn.map(({ex,i})=>card(ex,i)).join('')}</div></div>`;
   if(!html)html='<p style="text-align:center;color:rgba(255,255,255,.2);font-size:13px;padding:32px 0">No executors match.</p>';
+
   const g=document.getElementById('grid');if(!g)return;
   g.innerHTML=html;
   requestAnimationFrame(()=>{let i=0;g.querySelectorAll('.xcard').forEach(c=>{c.style.transitionDelay=i*11+'ms';requestAnimationFrame(()=>c.classList.add('in'));i++;});});
-  ['ht','hu','hd'].forEach((id,i)=>{const e=document.getElementById(id);if(e)e.textContent=[DATA.length,DATA.filter(x=>x.status==='updated').length,DATA.filter(x=>x.status==='down').length][i];});
+  const total=DATA.length;
+  const upd=DATA.filter(x=>x.status==='updated').length;
+  const dwn=DATA.filter(x=>x.status==='down').length;
+  ['ht','hu','hd'].forEach((id,i)=>{const e=document.getElementById(id);if(e)e.textContent=[total,upd,dwn][i];});
 }
 
 function setF(v,btn){filter=v;document.querySelectorAll('.fb').forEach(b=>b.classList.remove('on'));btn.classList.add('on');render();}
@@ -509,10 +607,19 @@ function setF(v,btn){filter=v;document.querySelectorAll('.fb').forEach(b=>b.clas
 function openM(i){
   const ex=DATA[i];if(!ex)return;
   const up=ex.status==='updated';
-  document.getElementById('mlogo').innerHTML=ex.icon?`<img src="${ex.icon}" onerror="this.parentElement.textContent='${ex.emoji}'">`:`<span style="font-size:30px">${ex.emoji}</span>`;
+  document.getElementById('mlogo').innerHTML=ex.icon
+    ?`<img src="${ex.icon}" onerror="this.parentElement.innerHTML='<span style=&quot;font-size:30px&quot;>${ex.emoji}</span>'">`
+    :`<span style="font-size:30px">${ex.emoji}</span>`;
   document.getElementById('mname').textContent=ex.name;
-  document.getElementById('mmeta').innerHTML=`<span class="mt">${ex.type}</span><span class="mp ${up?'up':'dn'}">${up?'Updated':'Down'}</span>${ex.note?`<span class="mw">${ex.note}</span>`:''}`;
+
+  let metaHTML=`<span class="mt">${ex.type}</span><span class="mp ${up?'up':'dn'}">${up?'Updated':'Down'}</span>`;
+  if(ex.note&&ex.note!=='null'&&ex.note!='Waves Possible'&&ex.note!='Potential RAT'&&ex.note!='Detected')metaHTML+=`<span class="mw">${ex.note}</span>`;
+  if(ex.det==='warn')metaHTML+=`<span class="mwarn">⚠ Waves Possible</span>`;
+  if(ex.det==='rat')metaHTML+=`<span class="mrat">⚠ ${ex.detlbl}</span>`;
+  if(ex.pinned)metaHTML+=`<span class="mw">★ Cy Recommends</span>`;
+  document.getElementById('mmeta').innerHTML=metaHTML;
   document.getElementById('mdesc').textContent=ex.desc;
+
   const sp=ex.status!=='down'&&ex.sunc!=null?ex.sunc:null;
   document.getElementById('msc').innerHTML=
     `<div class="ms"><span class="msk">UNC Score</span><span class="msv${ex.unc==null?' dim':''}">${utxt(ex.unc)}</span>${ex.unc!=null?`<div class="msbar"><div class="msfill" style="width:0%" data-w="${ex.unc}"></div></div>`:''}</div>`+
@@ -541,7 +648,21 @@ function go(n){
   window.scrollTo({top:0,behavior:'instant'});
   closeM({target:document.getElementById('mov')});
   if(n==='rankings')render();
+  else{
+    const total=DATA.length;
+    const upd=DATA.filter(x=>x.status==='updated').length;
+    const dwn=DATA.filter(x=>x.status==='down').length;
+    ['ht','hu','hd'].forEach((id,i)=>{const e=document.getElementById(id);if(e)e.textContent=[total,upd,dwn][i];});
+  }
 }
+
+// Init home stats
+(function(){
+  const total=DATA.length;
+  const upd=DATA.filter(x=>x.status==='updated').length;
+  const dwn=DATA.filter(x=>x.status==='down').length;
+  ['ht','hu','hd'].forEach((id,i)=>{const e=document.getElementById(id);if(e)e.textContent=[total,upd,dwn][i];});
+})();
 
 // CANVAS
 (function(){
